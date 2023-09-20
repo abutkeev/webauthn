@@ -1,6 +1,6 @@
 {
-  "name": "@passwordless-id/webauthn",
-  "version": "1.2.6",
+  "name": "@abutkeev/webauthn",
+  "version": "1.2.7",
   "description": "A small wrapper around the webauthn protocol to make one's life easier.",
   "type": "module",
   "main": "dist/esm/index.js",
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/passwordless-id/webauthn.git"
+    "url": "git+https://github.com/abutkeev/webauthn.git"
   },
   "keywords": [
     "authentication",
@@ -24,7 +24,7 @@
   "author": "Arnaud Dagnelies",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/passwordless-id/webauthn/issues"
+    "url": "https://github.com/abutkeev/webauthn/issues"
   },
   "homepage": "https://webauthn.passwordless.id",
   "devDependencies": {
