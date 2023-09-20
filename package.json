@@ -4,9 +4,8 @@
   "description": "A small wrapper around the webauthn protocol to make one's life easier.",
   "main": "dist/cjs/index.js",
   "types": "dist/cjs/index.d.ts",
-  "unpkg": "dist/webauthn.min.js",
   "scripts": {
-    "build": "tsc && esbuild src/index.ts --platform=neutral --bundle --sourcemap --minify --target=es2022 --outfile=dist/webauthn.min.js",
+    "build": "tsc",
     "test": "jest",
     "dev": "http-server"
   },
@@ -29,7 +28,6 @@
   "devDependencies": {
     "@babel/preset-typescript": "^7.21.4",
     "@types/jest": "^29.2.3",
-    "esbuild": "^0.15.8",
     "http-server": "^14.1.1",
     "jest": "^29.3.1",
     "jest-environment-jsdom": "^29.3.1",
