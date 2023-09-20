@@ -158,17 +158,11 @@ type VerifyParams = {
 export async function verifySignature({ algorithm, publicKey, authenticatorData, clientData, signature }: VerifyParams): Promise<boolean> {
     const algoParams = getAlgoParams(algorithm)
     let cryptoKey = await parseCryptoKey(algoParams, publicKey)
-    console.debug(cryptoKey)
 
     let clientHash = await utils.sha256(utils.parseBase64url(clientData));
 
     // during "login", the authenticatorData is exactly 37 bytes
     let comboBuffer = utils.concatenateBuffers(utils.parseBase64url(authenticatorData), clientHash)
-
-    console.debug('Crypto Algo: ' + JSON.stringify(algoParams))
-    console.debug('Public key: ' + publicKey)
-    console.debug('Data: ' + utils.toBase64url(comboBuffer))
-    console.debug('Signature: ' + signature)
 
     // https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/verify
     let signatureBuffer = utils.parseBase64url(signature)

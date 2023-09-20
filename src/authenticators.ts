@@ -3,9 +3,7 @@ import * as utils from './utils.js'
 
 
 export function parseAuthBuffer(authData :ArrayBuffer) {
-    console.debug(authData)
     let flags = new DataView(authData.slice(32,33)).getUint8(0)
-    console.debug(flags)
 
     // https://w3c.github.io/webauthn/#sctn-authenticator-data
     let parsed :any = {
@@ -68,12 +66,10 @@ export async function updateDevicesMetadata() {
     const jwt = await (await fetch("https://mds.fidoalliance.org")).text()
 
     // the response is a JWT including all AAGUIDs and their metadata
-    console.debug(jwt)
 
     // let us ignore the JWT verification, since this is solely for descriptive purposes, not signed data
     const payload = jwt.split('.')[1].replaceAll('-', '+').replaceAll('_', '/')
     const json = JSON.parse(atob(payload))
-    console.debug(json)
 
     let aaguidMetadata :any = {}
     for(const e of json.entries) {
@@ -83,6 +79,5 @@ export async function updateDevicesMetadata() {
         aaguidMetadata[e.aaguid] = {name: e.metadataStatement.description}
     }
 
-    console.debug(aaguidMetadata)
     updatedAuthenticatorMetadata = aaguidMetadata
 }
