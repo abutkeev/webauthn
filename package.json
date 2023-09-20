@@ -2,9 +2,8 @@
   "name": "@abutkeev/webauthn",
   "version": "1.2.7",
   "description": "A small wrapper around the webauthn protocol to make one's life easier.",
-  "type": "module",
-  "main": "dist/esm/index.js",
-  "types": "dist/esm/index.d.ts",
+  "main": "dist/cjs/index.js",
+  "types": "dist/cjs/index.d.ts",
   "unpkg": "dist/webauthn.min.js",
   "scripts": {
     "build": "tsc && esbuild src/index.ts --platform=neutral --bundle --sourcemap --minify --target=es2022 --outfile=dist/webauthn.min.js",
